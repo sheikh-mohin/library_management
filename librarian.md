@@ -1,4 +1,4 @@
-# _Patient API Index_
+# _API Index_
 
 - [01. Librarian Register](#01-librarian-register)
 - [02. Login](#02-login)
