@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "a8cd1f6e-9ae4-464d-a38e-5e88220e6b8c",
+		"name": "LIBRARY MANAGEMENT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18974135"
+	},
+	"item": [
+		{
+			"name": "LIBRARIAN",
+			"item": [
+				{
+					"name": "Register Librarian",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mohin\",\r\n    \"email\": \"mohinsheikh2011@gmail.com\",\r\n    \"password\": \"user123\",\r\n    \"confirmPass\": \"user123\",\r\n    \"gender\": \"male\",\r\n    \"mobileNumber\": \"8830186747\",\r\n    \"dob\": \"2000-05-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/librarian/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"librarian",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"mohinsheikh2011@gmail.com\",\r\n    \"password\": \"user123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/librarian/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"librarian",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BOOKS",
+			"item": [
+				{
+					"name": "Register Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_name\": \"In Search of Lost Time\",\r\n    \"title\": \"In Search of Lost Time by Marcel Proust\",\r\n    \"publisher\": \"Marcel Proust\",\r\n    \"author\": \"Swann's Way\",\r\n    \"quantity\": 250,\r\n    \"price\": 1500.30,\r\n    \"issueDate\": \"2022-05-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/book/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books Fetch Single",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/book/fetch/63346ebe350a3a255e9a5362",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								"fetch",
+								"63346ebe350a3a255e9a5362"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books Fetch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/book/fetch?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books Modify",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"63346ebe350a3a255e9a5362\",\r\n    \"book_name\": \"One Hundred Years of Solitude\",\r\n    \"title\": \"One Hundred Years of Solitude by Gabriel Garcia Marquez\",\r\n    \"publisher\": \"Garcia Marquez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/book/modify",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								"modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/book/remove?id=63346ebe350a3a255e9a5362",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								"remove"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "63346ebe350a3a255e9a5362"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BOOK ISSUE REQUEST",
+			"item": [
+				{
+					"name": "Add book Issue Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"issueTo\": \"USER\",\r\n    \"bookId\": \"63346ebe350a3a255e9a5362\",\r\n    \"issueDate\": \"2022-05-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/book/request/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"book",
+								"request",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

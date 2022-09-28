@@ -26,9 +26,9 @@ exports.update = (req, res, next) => {
     }
 };
 
-exports.delete = (req, res, next) => {
+exports.checkId = (req, res, next) => {
     try {
-        const { value, error } = validate.delete.validate(req.query);
+        const { value, error } = validate.checkId.validate(req.query);
         if (error) {
             return res.send({ error: error.message.toString() })
         }

@@ -9,6 +9,6 @@ module.exports = (router) => {
     router.get('/book/fetch/:id', verifyToken, checkLibrarian, api.getBook);
     router.get('/book/fetch', verifyToken, checkLibrarian, api.get);
     router.patch('/book/modify', verifyToken, checkLibrarian, validator.update, api.update);
-    router.delete('/book/remove', verifyToken, checkLibrarian, validator.delete, api.remove);
+    router.delete('/book/remove', verifyToken, checkLibrarian, validator.checkId, api.remove);
     return router;
 };

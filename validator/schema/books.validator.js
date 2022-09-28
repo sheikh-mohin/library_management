@@ -20,6 +20,6 @@ exports.modify = Joi.object({
     price: Joi.number()
 });
 
-exports.delete = Joi.object({
+exports.checkId = Joi.object({
     id: Joi.string().required()
 });
