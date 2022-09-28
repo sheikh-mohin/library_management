@@ -30,7 +30,7 @@ exports.register = async (req, res) => {
                     .send(
                         getResponseStructure(
                             status.successCreated,
-                            "book" + message.successCreated
+                            "Book" + message.successCreated
                         )
                     );
             })
@@ -138,7 +138,7 @@ exports.update = async (req, res) => {
             price: 1,
             issueDate: 1
         });
-        books = books[0]
+        books = books[0];
         if (!books) {
             return res
                 .status(status.success)

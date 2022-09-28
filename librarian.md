@@ -5,7 +5,7 @@
 
 # _API End Point_
 
-**Route**: `localhost:3000/api/v1`
+**Route**: `http://localhost:3000/api/v1`
 
 # _Postman Collection_
 

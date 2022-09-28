@@ -1,8 +1,8 @@
 const Joi = require('joi').extend(require('@joi/date'));  // Validation
 
 exports.register = Joi.object({
-    book_name: Joi.string().lowercase().min(3).max(30).required(),
-    title: Joi.string().lowercase().min(3).max(30).required(),
+    book_name: Joi.string().lowercase().min(3).required(),
+    title: Joi.string().lowercase().min(3).required(),
     publisher: Joi.string().lowercase().min(3).max(30).required(),
     author: Joi.string().lowercase().min(3).max(30).required(),
     quantity: Joi.number().required(),
@@ -11,9 +11,9 @@ exports.register = Joi.object({
 });
 
 exports.modify = Joi.object({
-    id: Joi.string().required,
-    book_name: Joi.string().lowercase().min(3).max(30),
-    title: Joi.string().lowercase().min(3).max(30),
+    id: Joi.string().required(),
+    book_name: Joi.string().lowercase().min(3),
+    title: Joi.string().lowercase().min(3),
     publisher: Joi.string().lowercase().min(3).max(30),
     author: Joi.string().lowercase().min(3).max(30),
     quantity: Joi.number(),
@@ -21,5 +21,5 @@ exports.modify = Joi.object({
 });
 
 exports.delete = Joi.object({
-    id: Joi.string().required
+    id: Joi.string().required()
 });
