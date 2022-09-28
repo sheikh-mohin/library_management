@@ -9,7 +9,9 @@
 
 # _Postman Collection_
 
-~ _**https://www.getpostman.com/collections/a6182bf232a37d783100**_
+```
+https://www.getpostman.com/collections/a6182bf232a37d783100
+```
 
 # _Environments Variable for Postman_
 
