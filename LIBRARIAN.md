@@ -17,7 +17,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
 
 (**Note** : _**Set this Environments Variable to your postman**_)
 
-**url** => `localhost:3000/api/v1`
+**url** => `http://localhost:3000/api/v1`
 
 **token** => `"...Your Token"`
 
