@@ -1,6 +1,6 @@
 # _API Index_
 
-- [01. Issue Request Register](#01-issue-request-register)
+- [01. Issue Request Register [auth]](#01-issue-request-register-auth)
 
 # _API End Point_
 
@@ -22,7 +22,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
 
 # _API Reference_
 
-## 01. Issue Request Register
+## 01. Issue Request Register [auth]
 
 **Route:**
 `/book/request/register`

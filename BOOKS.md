@@ -1,10 +1,10 @@
 # _API Index_
 
-- [01. Books Register](#01-books-register)
-- [02. Fetch Single Book](#02-fetch-single-book)
-- [03. Fetch All Book](#03-fetch-all-book)
-- [04. Modify Books](#04-modify-books)
-- [05. Remove Books](#05-remove-books)
+- [01. Books Register [auth]](#01-books-register-auth)
+- [02. Fetch Single Book [auth]](#02-fetch-single-book-auth)
+- [03. Fetch All Book [auth]](#03-fetch-all-book-auth)
+- [04. Modify Books [auth]](#04-modify-books-auth)
+- [05. Remove Books [auth]](#05-remove-books-auth)
 
 # _API End Point_
 
@@ -26,7 +26,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
 
 # _API Reference_
 
-## 01. Books Register
+## 01. Books Register [auth]
 
 **Route:**
 `/book/register`
@@ -60,7 +60,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
 }
 ```
 
-## 02. Fetch Single Book
+## 02. Fetch Single Book [auth]
 
 **Route:**
 `/book/fetch/:id`
@@ -94,7 +94,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
 }
 ```
 
-## 03. Fetch All Book
+## 03. Fetch All Book [auth]
 
 **Route:**
 `/book/fetch`
@@ -138,7 +138,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
 ```
 
 
-## 04. Modify Books
+## 04. Modify Books [auth]
 
 **Route:**
 `/book/modify`
@@ -169,7 +169,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
 ```
 
 
-## 05. Remove Books
+## 05. Remove Books [auth]
 
 **Route:**
 `/book/remove`
