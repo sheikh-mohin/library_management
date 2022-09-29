@@ -43,8 +43,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
   "publisher": "Marcel Proust",
   "author": "Swan's Way",
   "quantity": 250,
-  "price": 1500.30,
-  "issueDate": "2022-05-25"
+  "price": 1500.3
 }
 ```
 
@@ -117,26 +116,24 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
   "response": {
     "Books": [
       {
-        "_id": "63346ebe350a3a255e9a5362",
+        "_id": "63352b8dd58824ab4efb5f13",
         "book_name": "in search of lost time",
         "title": "in search of lost time by marcel proust",
         "publisher": "marcel proust",
         "author": "swann's way",
-        "issueDate": "2022-05-25T00:00:00.000Z",
-        "quantity": 250,
-        "numberOfIssue": 0,
+        "quantity": 249,
         "price": 1500.3
       }
     ],
     "Total_books": 1,
-    "Total_quantity": 250,
+    "Total_quantity": 249,
+    "Total_Issue": 1,
     "Page": 1,
     "Next_page": 1,
     "Total_pages": 1
   }
 }
 ```
-
 
 ## 04. Modify Books [auth]
 
@@ -156,6 +153,7 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
   "publisher": "Garcia Marquez"
 }
 ```
+
 - `ID` is required.
 
 **Sample response:**
@@ -167,7 +165,6 @@ https://www.getpostman.com/collections/a6182bf232a37d783100
   "response": {}
 }
 ```
-
 
 ## 05. Remove Books [auth]
 

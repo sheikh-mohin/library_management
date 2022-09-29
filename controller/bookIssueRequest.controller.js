@@ -12,7 +12,6 @@ exports.register = async (req, res) => {
         });
         const books = await bookSchema.findOne({ _id: bookIssueRequest["bookId"], isDeleted: false }, {
             quantity: 1,
-            numberOfIssue: 1,
             isDeleted: 1,
             updatedAt: 1,
         });
@@ -22,7 +21,6 @@ exports.register = async (req, res) => {
                 .send(getResponseStructure(status.notfound, "Book" + message.notFound));
         }
         books.quantity = books.quantity - 1;
-        books.numberOfIssue = books.numberOfIssue + 1;
         books.updatedAt = new Date();
         await bookSchema.updateOne({ _id: books._id }, books);
         await bookIssueRequest.save()

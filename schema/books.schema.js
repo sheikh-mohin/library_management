@@ -17,17 +17,9 @@ const bookSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    issueDate: {
-        type: Date,
-        require: true
-    },
     quantity: {
         type: Number,
         require: true
-    },
-    numberOfIssue: {
-        type: Number,
-        default: 0
     },
     price: {
         type: Number,

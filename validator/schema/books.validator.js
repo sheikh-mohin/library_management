@@ -7,7 +7,6 @@ exports.register = Joi.object({
     author: Joi.string().lowercase().min(3).max(30).required(),
     quantity: Joi.number().required(),
     price: Joi.number().required(),
-    issueDate: Joi.date().format('YYYY-MM-DD').utc(),
 });
 
 exports.modify = Joi.object({

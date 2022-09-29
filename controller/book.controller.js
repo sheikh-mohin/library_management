@@ -1,4 +1,5 @@
 const bookSchema = require("../schema/books.schema");
+const bookIssueSchema = require("../schema/bookIssueRequest.schema");
 const { status, message } = require("../validator/utils");
 const { getResponseStructure } = require("../constants/response.structure");
 
@@ -11,7 +12,6 @@ exports.register = async (req, res) => {
             author: req.body.author,
             quantity: req.body.quantity,
             price: req.body.price,
-            issueDate: req.body.issueDate,
         });
         const findBook = await bookSchema.find({
             book_name: book["book_name"], title: book['title'], publisher: book['publisher']
@@ -61,7 +61,6 @@ exports.get = async (req, res) => {
             quantity: 1,
             price: 1,
             issueDate: 1,
-            numberOfIssue: 1,
         })
             .skip(page * perPage - perPage)
             .limit(perPage)
@@ -75,6 +74,7 @@ exports.get = async (req, res) => {
         books.map((r) => {
             return Total_Quantity += r['quantity']
         });
+        const numberOfIssue = await bookIssueSchema.countDocuments({ isDeleted: false });
         const totalCount = await bookSchema.countDocuments({ isDeleted: false });
         let totalPages = Math.ceil(totalCount / perPage);
         let nextPage = page + 1;
@@ -88,6 +88,7 @@ exports.get = async (req, res) => {
                     Books: books,
                     Total_books: totalCount,
                     Total_quantity: Total_Quantity,
+                    Total_Issue: numberOfIssue,
                     Page: page,
                     Next_page: nextPage,
                     Total_pages: totalPages,
@@ -109,7 +110,6 @@ exports.getBook = async (req, res) => {
             quantity: 1,
             price: 1,
             issueDate: 1,
-            numberOfIssue: 1
         })
             .sort({ book_name: 'asc' });
         if (books['length'] === 0) {
